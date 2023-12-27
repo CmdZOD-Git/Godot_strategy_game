@@ -1,0 +1,184 @@
+[gd_scene load_steps=8 format=3 uid="uid://chsiu8o0clii5"]
+
+[ext_resource type="FontFile" uid="uid://bh72qlns13e0l" path="res://Font/Roboto-Bold.ttf" id="1_6twfl"]
+[ext_resource type="PackedScene" uid="uid://gc278p8d5pv0" path="res://Core/tile.tscn" id="1_bygnx"]
+[ext_resource type="Script" path="res://Core/TileSpawner.gd" id="1_nc2jc"]
+[ext_resource type="FontFile" uid="uid://cfwle7krymu5o" path="res://Font/Roboto-Regular.ttf" id="2_pgvw4"]
+[ext_resource type="Texture2D" uid="uid://cuqv3jmdc0dry" path="res://Sprites/Mine.png" id="3_lr5or"]
+[ext_resource type="Texture2D" uid="uid://0vqgjk5gdk" path="res://Sprites/Greenhouse.png" id="4_hpi0l"]
+[ext_resource type="Texture2D" uid="uid://ctiovrvb2l7i7" path="res://Sprites/Base.png" id="5_25lqh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TileGroup" type="Node" parent="."]
+script = ExtResource("1_nc2jc")
+baseTile = ExtResource("1_bygnx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 590.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
+
+[node name="EndTurn" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 34.0
+offset_right = 1246.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("1_6twfl")
+theme_override_font_sizes/font_size = 35
+text = "End turn"
+
+[node name="TurnNumber" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 878.0
+offset_top = 56.0
+offset_right = 1021.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "Turn 257"
+
+[node name="Container" type="Container" parent="Control"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 34.0
+offset_right = 270.0
+offset_bottom = 109.0
+
+[node name="BuildingContainer" type="BoxContainer" parent="Control/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/Container/BuildingContainer"]
+layout_mode = 2
+icon = ExtResource("3_lr5or")
+
+[node name="Button2" type="Button" parent="Control/Container/BuildingContainer"]
+layout_mode = 2
+icon = ExtResource("4_hpi0l")
+
+[node name="Button3" type="Button" parent="Control/Container/BuildingContainer"]
+layout_mode = 2
+icon = ExtResource("5_25lqh")
+
+[node name="Container2" type="Container" parent="Control"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 20.0
+offset_right = 860.0
+offset_bottom = 120.0
+
+[node name="RessourceContainer" type="GridContainer" parent="Control/Container2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Container2/RessourceContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Control" type="HBoxContainer" parent="Control/Container2/RessourceContainer/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="FoodLabel" type="Label" parent="Control/Container2/RessourceContainer/MarginContainer/Control"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "Food :"
+
+[node name="FoodAmount" type="Label" parent="Control/Container2/RessourceContainer/MarginContainer/Control"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.709804, 0.517647, 0, 1)
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "25 (+80)"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/Container2/RessourceContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Control2" type="HBoxContainer" parent="Control/Container2/RessourceContainer/MarginContainer2"]
+layout_mode = 2
+alignment = 2
+
+[node name="MetalLabel" type="Label" parent="Control/Container2/RessourceContainer/MarginContainer2/Control2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "Metal :"
+
+[node name="MetalAmount" type="Label" parent="Control/Container2/RessourceContainer/MarginContainer2/Control2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.709804, 0.517647, 0, 1)
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "25 (+80)"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/Container2/RessourceContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Control3" type="HBoxContainer" parent="Control/Container2/RessourceContainer/MarginContainer3"]
+layout_mode = 2
+alignment = 2
+
+[node name="OxygenLabel" type="Label" parent="Control/Container2/RessourceContainer/MarginContainer3/Control3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "Oxygen :"
+
+[node name="OxygenAmount" type="Label" parent="Control/Container2/RessourceContainer/MarginContainer3/Control3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.709804, 0.517647, 0, 1)
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "25 (+80)"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/Container2/RessourceContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Control4" type="HBoxContainer" parent="Control/Container2/RessourceContainer/MarginContainer4"]
+layout_mode = 2
+alignment = 2
+
+[node name="EnergyLabel" type="Label" parent="Control/Container2/RessourceContainer/MarginContainer4/Control4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "Energy :"
+
+[node name="EnergyAmount" type="Label" parent="Control/Container2/RessourceContainer/MarginContainer4/Control4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.709804, 0.517647, 0, 1)
+theme_override_fonts/font = ExtResource("2_pgvw4")
+theme_override_font_sizes/font_size = 30
+text = "25 (+80)"
