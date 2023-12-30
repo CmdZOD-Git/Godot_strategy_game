@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bh72qlns13e0l" path="res://Font/Roboto-Bold.ttf" id="1_6twfl"]
 [ext_resource type="PackedScene" uid="uid://gc278p8d5pv0" path="res://Core/tile.tscn" id="1_bygnx"]
-[ext_resource type="Script" path="res://Core/TileSpawner.gd" id="1_nc2jc"]
+[ext_resource type="Script" path="res://Core/map.gd" id="1_nc2jc"]
 [ext_resource type="FontFile" uid="uid://cfwle7krymu5o" path="res://Font/Roboto-Regular.ttf" id="2_pgvw4"]
 [ext_resource type="Texture2D" uid="uid://cuqv3jmdc0dry" path="res://Sprites/Mine.png" id="3_lr5or"]
 [ext_resource type="Texture2D" uid="uid://0vqgjk5gdk" path="res://Sprites/Greenhouse.png" id="4_hpi0l"]
